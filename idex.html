@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+      integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="./css/main.css" />
+  </head>
+  <body>
+    <!--BÀI 1:-->
+    <div class="baitap1">
+      <h2>Tìm số chẵn/lẻ nhỏ hơn 100</h2>
+      <button type="button" class="btn btn-primary" id="btnResultChanLe">
+        Xem kết quả
+      </button>
+      <div class="end">
+        <i class="fa fa-hand-point-right"></i>
+        <span id="txtResultChan"></span>
+        <br /><i class="fa fa-hand-point-right"></i>
+        <span id="txtResultLe"></span>
+      </div>
+    </div>
+
+    <!--Bài 2:-->
+    <div class="baitap">
+      <h2>Đếm số chia hết cho 3 từ 0-1000</h2>
+      <button type="button" class="btn btn-primary" id="btnChiaHet3">
+        Xem kết quả
+      </button>
+      <div class="end">
+        <i class="fa fa-hand-point-right"></i>
+        <span id="txtChiaHet3"></span>
+      </div>
+    </div>
+
+    <!--BÀI 3:-->
+    <div class="baitap">
+      <h2>Tìm số nguyên dương nhỏ nhất sao cho 1+2+3+...+n > 10000</h2>
+      <button type="button" class="btn btn-primary" id="btnNguyenDuong">
+        Xem kết quả
+      </button>
+      <div class="end">
+        <i class="fa fa-hand-point-right"></i>
+        <span id="txtNguyenDuong"></span>
+      </div>
+    </div>
+
+    <!--BÀI 4:-->
+    <div class="baitap">
+      <h2>Tính tổng: S(n)= x+x^2+x^3+...+x^n</h2>
+      <form>
+        <div class="row">
+          <div class="form-group col-12 col-lg-6">
+            <label for="soX"></label>
+            <input
+              type="text"
+              class="form-control"
+              id="soX"
+              placeholder="Nhập số x"
+            />
+          </div>
+          <div class="form-group col-12 col-lg-6">
+            <label for="soN"></label>
+            <input
+              type="number"
+              class="form-control"
+              id="soN"
+              placeholder="Nhập số n"
+            />
+          </div>
+        </div>
+      </form>
+      <button type="button" class="btn btn-primary" id="btnTong">
+        Tính tổng
+      </button>
+      <div class="end">
+        <i class="fa fa-hand-point-right"></i>
+        <span id="txtTong"></span>
+      </div>
+    </div>
+
+    <!--Bài 5:-->
+    <div class="baitap">
+      <h2>Tính giai thừa</h2>
+      <form>
+        <div class="row">
+          <div class="form-group col-12 col-lg-6">
+            <label for="soNgiaithua"></label>
+            <input
+              type="text"
+              class="form-control"
+              id="soNgiaithua"
+              placeholder="Nhập số n"
+            />
+          </div>
+        </div>
+      </form>
+      <button type="button" class="btn btn-primary" id="btnTinh">Tính</button>
+      <div class="end">
+        <i class="fa fa-hand-point-right"></i>
+        <span id="txtTinh"></span>
+      </div>
+    </div>
+
+    <!--BÀI 6:-->
+    <div class="baitap">
+      <h2>Tính thẻ div</h2>
+      <div class="col-12">
+        <div>Thẻ thứ 1</div>
+        <div>Thẻ thứ 2</div>
+        <div>Thẻ thứ 3</div>
+        <div>Thẻ thứ 4</div>
+        <div>Thẻ thứ 5</div>
+        <div>Thẻ thứ 6</div>
+        <div>Thẻ thứ 7</div>
+        <div>Thẻ thứ 8</div>
+        <div>Thẻ thứ 9</div>
+        <div>Thẻ thứ 10</div>
+      </div>
+      <button type="button" class="btn btn-primary" id="btnTaoThe">
+        Tạo thẻ
+      </button>
+      <div class="end">
+        <i class="fa fa-hand-point-right"></i>
+        <span id="txtTaoThe"></span>
+      </div>
+    </div>
+
+    <!--Bài 7:-->
+    <div class="baitap">
+      <h2>In số nguyên tố</h2>
+      <form>
+        <div class="row">
+          <div class="form-group col-12 col-lg-6">
+            <label for="tapSo"></label>
+            <input
+              type="text"
+              class="form-control"
+              id="tapSo"
+              placeholder="Nhập số n"
+            />
+          </div>
+        </div>
+      </form>
+      <button type="button" class="btn btn-primary" id="btnInSo">In số</button>
+      <div class="end">
+        <i class="fa fa-hand-point-right"></i>
+        <span id="txtInSo"></span>
+      </div>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="./js/main.js"></script>
+  </body>
+</html>
