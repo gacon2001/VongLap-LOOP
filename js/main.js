@@ -7,9 +7,9 @@ var soLe= "";
 var n1= 1;
 while (n1 < 100){
     if (n1 %2 ==0){
-        soChan += "" +n1;
+        soChan += " " +n1;
     }else {
-        soLe += "" +n1;
+        soLe += " " +n1;
     }
     n1++;
 }
@@ -26,9 +26,9 @@ document.getElementById("btnResultChanLe").onclick = function () {
 
   for (var i = 0; i < 100; i++) {
     if (i % 2 == 0) {
-      soChan += "" + i;
+      soChan += " " + i; 
     } else {
-      soLe += "" + i;
+      soLe += " " + i;
     }
   }
   console.log(soChan);
@@ -39,39 +39,33 @@ document.getElementById("btnResultChanLe").onclick = function () {
 
 //!BÀI 2:
 //?WHILE:
-/*document.getElementById("btnChiaHet3").onclick= function () {
-    var soChiaHetCho3= "";
-    var soKoChiaHetCho3= "";
-    console.log(soChiaHetCho3, soKoChiaHetCho3);
+document.getElementById("btnChiaHet3").onclick= function () {
+    var count= 0;
+    console.log(count);
 
-    var n2= 0;
-    while (n2 < 1000){
-        if (n2 %3 ==0){
-            soChiaHetCho3 += "" +n2;
-        }else {
-            soKoChiaHetCho3 += ""+n2;
+    var i=0;
+    while (i< 1000){
+        if (i %3 ==0){
+           count++;
         }
-        n2++;
+        i++;
     }
-    document.getElementById("txtChiaHet3").innerHTML= "Số chia hết cho 3 nhỏ hơn 1000: " + soChiaHetCho3;
+    document.getElementById("txtChiaHet3").innerHTML= "Số chia hết cho 3 nhỏ hơn 1000: " + count;
 }
-*/
 //?FOR:
+/*
 document.getElementById("btnChiaHet3").onclick = function () {
-  var soChiaHetCho3 = "";
-  var soKoChiaHetCho3 = "";
-  console.log(soChiaHetCho3, soKoChiaHetCho3);
+  var count=0;
+  console.log(count);
 
   for (var i = 0; i < 1000; i++) {
     if (i % 3 == 0) {
-      soChiaHetCho3 += "" + i;
-    } else {
-      soKoChiaHetCho3 += "" + i;
+      count ++;
     }
   }
   document.getElementById("txtChiaHet3").innerHTML =
-    "Số chia hết cho 3 nhỏ hơn 1000: " + soChiaHetCho3;
-};
+    "Số chia hết cho 3 nhỏ hơn 1000: " + count;
+};*/
 
 //!BÀI 3:
 //?WHILE:
@@ -82,7 +76,7 @@ document.getElementById("btnNguyenDuong").onclick= function () {
 
     var n =0;
     while (n >0){
-        if (tong > 10000){
+        if (tong <= 10000){
             tong += ""+ n;
         }
         n++;
@@ -91,22 +85,18 @@ document.getElementById("btnNguyenDuong").onclick= function () {
 }
 */
 //?FOR:
-/*
 document.getElementById("btnNguyenDuong").onclick= function () {
-    var tong= "";
-    console.log(tong);
-
-    for (var i=0; i>0; i++){
-        if (tong >10000){
-            tong += "" +i;
-        }
+    var tong = 0;
+    var i;
+    for (i=0; tong <= 10000; i++){
+        tong += i;
+    document.getElementById("txtNguyenDuong").innerHTML= "Số nguyên dương nhỏ nhất: "+ (i);
     }
-    document.getElementById("txtNguyenDuong").innerHTML= "Số nguyên dương nhỏ nhất: "+ n;
+    //document.getElementById("txtNguyenDuong").innerHTML= "Số nguyên dương nhỏ nhất: "+ (i-1);
 }
-*/
+
 
 //!BÀI 4:
-
 document.getElementById("btnTong").onclick = function () {
     var x= document.getElementById("soX").value;
     var n= document.getElementById("soN").value;
@@ -117,8 +107,7 @@ document.getElementById("btnTong").onclick = function () {
         sum += Math.pow(x, i);
     }
     document.getElementById("txtTong").innerHTML= "Tổng: "+sum;
-};
-
+}
 
 
 //!BÀI 5:
@@ -140,60 +129,50 @@ document.getElementById("btnTinh").onclick= function () {
 
 //!BÀI 6:
 document.getElementById("btnTaoThe").onclick= function (){
-    var divContent= document.getElementsByTagName("div");
-    console.log(divContent);
+    var content = document.querySelectorAll(".bai6 .content div"); // lấy tất cả thẻ div ở trong .bai6 .content
 
-    for (var i=1; i<= divContent.length; i++){
+    // javascript bắt đầu mảng bằng index: 0
+    // lặp qua tất cả thẻ div
+    for (var i=0; i< content.length; i++){
         if (i%2 ==0){
-            divContent[i].style.background= "red";
+            content[i].innerHTML = "Thẻ lẻ";
+            content[i].style.background= "red";
         }else {
-            divContent[i].style.background= "blue";
+            content[i].innerHTML = "Thẻ chẵn";
+            content[i].style.background= "blue";
         }
     }
 }
 
-
-//!BÀI 7:
-function kiem_tra_soNguyenTo(){
-    var n = +document.getElementById("tapSo").value;
-    console.log(n);
-
-    //!Kiểm tra là số nguyên tố hay không:
-    if (n<2){
-        document.getElementById("txtInSo").innerHTML= n + ": không phải là số nguyên tố"
+//!Bài 7:
+//!Kiểm tra là số nguyên tố hay ko:
+function kiem_tra_soNguyenTo(n){
+    if (n < 2) {
+        return true;
     } else if (n ==2){
-        document.getElementById("txtInSo").innerHTML= n + ": là số nguyên tố"
+        return true;
     } else if (n%2 ==0){
-        document.getElementById("txtInSo").innerHTML= n + ": không phải là số nguyên tố"
+        return false;
     } else {
-        //n là số nguyên tố thì trong khoảng từ 2 đến căn bậc hai cua n sẽ không tồn tại số mà n chia hết
-        for (var i=3; i<= Math.sqrt(n); i++){
+        //n là số nguyên tố thì trong khoảng từ 2 đến căn bậc hai cua n sẽ không tồn tại số mà n chia hết => nếu n%i==0 thì n ko phải là snt
+        for (var i=3; i <= Math.sqrt(n); i++){
             if (n%i ==0){
-                document.getElementById("txtInSo").innerHTML= n + ": không phải là số nguyên tố"
+                return false;
             }
         }
-        //?WHILE:
-        /*
-        var i =3;
-        while (i <= Math.sqrt(n)){
-            if (n%i ==0){
-                document.getElementById("txtInSo").innerHTML= n + ": không phải là số nguyên tố"
-            }
-            i++;
-        }
-        */
+        return true;
     }
-    return n;
 }
 
-    //!In số nguyên tố:
+//!In snt:
 document.getElementById("btnInSo").onclick= function (){
+    var n = +document.getElementById("tapSo").value;
     var soNguyenTo= "";
-    console.log(soNguyenTo);
+    console.log(n, soNguyenTo);
 
-    for (var i=1; i<= n; i++){
+    for (var i=1; i <= n; i++){
         if (kiem_tra_soNguyenTo(i)){
-            soNguyenTo += i;
+            soNguyenTo += " "+ i;
         }
     }
     document.getElementById("txtInSo").innerHTML= soNguyenTo;
